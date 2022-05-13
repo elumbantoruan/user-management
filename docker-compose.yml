@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  database:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - data:/var/lib/postgresql/data
+  
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DBSERVER=database
+    depends_on:
+      - database
+    networks:
+      - default
+    ports:
+    - "8088:8088"
+volumes:
+  data:
