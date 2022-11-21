@@ -6,10 +6,10 @@ Endpoint to create an user row in postgres db. The payload should have the follo
 
 ```json
 {
-  "email": "edison@pellucidcomputing.com",
-  "password": "elumbantoruan",
-  "firstName": "Edison",
-  "lastName": "Lumbantoruan"
+  "email": "jdoe@jdoe.org",
+  "password": "mysecret",
+  "firstName": "John",
+  "lastName": "Doe"
 }
 ```
 
@@ -28,7 +28,7 @@ Endpoint to log an user in. The payload should have the following fields:
 
 ```json
 {
-  "email": "edison@pellucidcomputing.com",
+  "email": "jdoe@jdoe.org",
   "password": "mysecret"
 }
 ```
@@ -49,9 +49,9 @@ The response body should look like:
 {
   "users": [
     {
-      "email": "edison@pellucidcomputing.com",
-      "firstName": "Edison",
-      "lastName": "Lumbantoruan"
+      "email": "jdoe@jdoe.org",
+      "firstName": "John",
+      "lastName": "Doe"
     }
   ]
 }
@@ -68,5 +68,4 @@ Endpoint to update the current user `firstName` or `lastName` only. This endpoin
 ```
 
 The response can body can be empty.
-
 
